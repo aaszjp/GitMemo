@@ -1,43 +1,44 @@
-http://gitlab.tools.vipshop.com/spec-ios-team/vip_spec.git
+$ git clone -b <分支名> <仓库地址>
+	Git克隆某一个特定的远程分支
 
-拉取
-$ git pull --rebase origin feature/feature-5.23-long
+$ git pull --rebase origin <分支名>
+	拉取
 
-推送
-$ git push origin feature/feature-5.23-long
+$ git push origin <分支名>
+	推送
 
-Git克隆某一个特定的远程分支
-$ git clone -b develop_universal_ http://gitlab.tools.vipshop.com/spec-ios-team/vip_spec.git
-
-查询某人的提交记录
 $ git log  --author=””
+	查询某人的提交记录
 
-查询某文件的提交记录
 $ git log <file>
+	查询某文件的提交记录
 
-修改最后一次提交
-有时候我们提交完了才发现漏掉了几个文件没有加，或者提交信息写错了。想要撤消刚才的提交操作，可以使用 --amend选项重新提交：
 $ git commit --amend
-$ git commit --amend
-此命令将使用当前的暂存区域快照提交。如果刚才提交完没有作任何改动，直接运行此命令的话，相当于有机会重新编辑提交说明，但将要提交的文件快照和之前的一样。
-启动文本编辑器后，会看到上次提交时的说明，编辑它确认没问题后保存退出，就会使用新的提交说明覆盖刚才失误的提交。
-如果刚才提交时忘了暂存某些修改，可以先补上暂存操作，然后再运行 --amend 提交：
+	修改最后一次提交：有时候我们提交完了才发现漏掉了几个文件没有加，或者提交信息写错了。想要撤消刚才的提交操作，可以使用 --amend选项重新提交：
+
 $ git commit -m 'initial commit'
 $ git add forgotten_file
 $ git commit --amend
-上面的三条命令最终只是产生一个提交，第二个提交命令修正了第一个的提交内容。
+	上面的三条命令最终只是产生一个提交，第二个提交命令修正了第一个的提交内容。
+	此命令将使用当前的暂存区域快照提交。如果刚才提交完没有作任何改动，直接运行此命令的话，相当于有机会重新编辑提交说明，但将要提交的文件快照和之前的一样。
+	启动文本编辑器后，会看到上次提交时的说明，编辑它确认没问题后保存退出，就会使用新的提交说明覆盖刚才失误的提交。
+	如果刚才提交时忘了暂存某些修改，可以先补上暂存操作，然后再运行 --amend 提交：
 
-可以查看所有分支的所有操作记录（包括（包括commit和reset的操作），包括已经被删除的commit记录，git log则不能察看已经删除了的commit记录
 $ git reflog 
+	可以查看所有分支的所有操作记录（包括（包括commit和reset的操作），包括已经被删除的commit记录，git log则不能察看已经删除了的commit记录
 
-查看远程仓库的日志
 $ git log origin/master --oneline -n 3
+	查看远程仓库的日志
 
-刷新远程仓库的信息
 $ git fetch origin
+	刷新远程仓库的信息
 
-将修改添加到暂存区
 $ git add <file>
+	将修改添加到暂存区
+$ git add .
+	将所有修改添加到暂存区
 
-丢弃未暂存的修改
 $ git checkout -- <file>
+	丢弃未暂存的某个文件的修改
+$ git checkout .
+	丢弃未暂存的所有文件的修改
