@@ -49,6 +49,12 @@ $ git add .
 
 $ git reset HEAD <file>
 	取消已经暂存的文件
+$ git reset --hard HEAD^
+	撤销本地的上一次提交，
+	--hard 源码也会回退到某个版本，commit和index 都回回退到某个版本。（注意，这种方式是改变本地代码仓库源码）
+	--soft 保留源码，只回退到commit 信息到某个版本，不涉及index的回退，如果还需要提交，直接commit即可
+	HRAD^ 表示上一个提交，HEAD^^ 表示上上个提交，也可表示为 HEAD~2，以此类推
+	git revert是用一次新的commit来回滚之前的commit，git reset是直接删除指定的commit。reset 是在正常的commit历史中，删除了指定的commit，这时 HEAD 是向后移动了，而 revert 是在正常的commit历史中再commit一次，只不过是反向提交，他的 HEAD 是一直向前的（参考：http://yijiebuyi.com/blog/8f985d539566d0bf3b804df6be4e0c90.html）
 
 $ git checkout -- <file>
 	丢弃未暂存的某个文件的修改
@@ -93,4 +99,4 @@ $ git diff HEAD -- <name>
 
 $ git config --list
 	查看配置信息
-	
+
