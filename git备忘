@@ -9,6 +9,7 @@ $ git pull --rebase origin <分支名>
 
 $ git push origin <分支名>
 	推送
+	--force 加上该参数，会用本地的版本信息强行覆盖远端的版本信息，配合git reset --hard HEAD^ 使用可撤销远端的commit
 $ git push origin serverfix:serferfix
 	上传我本地的 serverfix 分支到远程仓库中去，仍旧称它为 serverfix 分支
 $ git push origin serverfix:awesomebranch
