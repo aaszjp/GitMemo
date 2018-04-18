@@ -14,6 +14,8 @@ $ git push origin serverfix:serferfix
 	上传我本地的 serverfix 分支到远程仓库中去，仍旧称它为 serverfix 分支
 $ git push origin serverfix:awesomebranch
 	把本地分支推送到某个命名不同的远程分支
+$ git push [远程名] :[分支名]
+	删除远程分支
 
 $ git log  --author=””
 	查询某人的提交记录
@@ -61,7 +63,6 @@ $ git checkout -- <file>
 	丢弃未暂存的某个文件的修改
 $ git checkout .
 	丢弃未暂存的所有文件的修改
-
 $ git checkout <name>
 	切换分支
 $ git checkout -b <name>
@@ -86,9 +87,6 @@ $ git branch -D <name>
 	强制删除本地分支
 $ git branch --set-upstream-to=origin/[远程分支名]  [本地分支名]
 	设置本地分支与远程分支的映射关系
-
-$ git push [远程名] :[分支名]
-	删除远程分支
 
 $ git merge <name>
 	合并某分支到当前分支
