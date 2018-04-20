@@ -101,6 +101,11 @@ $ git diff HEAD -- <name>
 $ git config --list
 	查看配置信息
 
+$git stash
+	save uncommitted changes.
+	git stash 可用来暂存当前正在进行的工作， 比如想 pull 最新代码， 又不想加新commit， 或者另外一种情况，为了fix 一个紧急的bug,  先stash, 使返回到自己上一个commit, 改完bug之后再stash pop, 继续原来的工作。
+$git stash pop
+$git stash list
 
 
 
